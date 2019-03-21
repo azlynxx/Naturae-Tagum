@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+	<head>
+		<title>
+			Naturae - Euclid 6
+		</title>
+
+		<style>
+			body {
+			    background-color: #fff;
+			    width: 100%;
+			    padding: 0;
+			    margin-left: 0;
+			    margin-right: 0;
+			    padding: 0;
+			}
+				ul
+					{
+					list-style-type:none;
+					margin:0;
+					padding:0;
+					overflow:hidden;
+					background-color:#fff;
+					position: fixed;
+					top: 0;
+					width: 100%;
+					left: 50%;
+    				top: 0%;
+    				transform: translateX(-50%);
+					}
+				li {
+					float:left;
+				}
+			   li a
+					{
+					display:block;
+					color:black;
+					text-align:center;
+					padding:16px;
+					text-decoration:none;
+					font-family: Hero;
+					}
+			  li a:hover
+					{
+					background-color:#fae596;
+					}
+
+				li a:link {color:#000000;}
+				li a:visited{color: #dddfd4;}
+				li a:active{color: red;}
+
+				.header {
+				  position: relative;
+				  text-align: center;
+				  color: white;
+				}
+
+				.headertxt{
+				  position: absolute;
+				  top: 25%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				  font-size:200px;
+				  color: #173e43;
+				}
+
+				.headersubtxt{
+				  position: absolute;
+				  top: 37%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				  color: #173e43;
+				  font-size:30px;
+				}
+
+				.container {
+				  position: relative;
+				  width: 100%;
+				}
+
+				.image {
+				  opacity: 1;
+				  display: block;
+				  width: 100%;
+				  height: auto;
+				  transition: .5s ease;
+				  backface-visibility: hidden;
+				}
+
+				.middle {
+				  transition: .5s ease;
+				  opacity: 0;
+				  position: absolute;
+				  top: 50%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				  -ms-transform: translate(-50%, -50%);
+				  text-align: center;
+				}
+
+				.container:hover .image {
+				  opacity: 0.3;
+				}
+
+				.container:hover .middle {
+				  opacity: 1;
+				}
+
+				.text {
+				  background-color: #173e43;
+				  color: white;
+				  font-size: 16px;
+				  padding: 16px 16px;
+				}
+
+				.intro {
+					padding:40px;
+				}
+
+				.logo img{
+					 transition: transform .2s;
+				}
+				.logo img:hover{
+					-ms-transform: scale(1.5);
+					transform: scale(1.5);
+				}
+
+				.newsletter {
+				  position: relative;
+				  text-align: center;
+				  color: white;
+				}
+
+				.newslettertxt{
+				  position: absolute;
+				  top: 15%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				  font-size:50px;
+				  color: #173e43;
+				}
+
+				input[type=text], input[type=password] {
+				  width: 100%;
+				  padding: 15px;
+				  margin: 5px 0 22px 0;
+				  display: inline-block;
+				  border: none;
+				  background: #f1f1f1;
+				}
+
+				input[type=text]:focus, input[type=password]:focus {
+				  background-color: #ddd;
+				  outline: none;
+				}
+
+				button {
+				  background-color: #fff; 
+				  border: none;
+				  color: black;
+				  padding: 16px 32px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 20px;
+				  margin: 4px 2px;
+				  -webkit-transition-duration: 0.4s;
+				  transition-duration: 0.4s;
+				  cursor: pointer;
+				  border-radius: 12px;
+				}
+
+				button:hover {background-color:  #173e43;}
+
+				.cancelbtn {
+				  padding: 14px 20px;
+				  background-color: #f44336;
+				}
+
+				.cancelbtn, .signupbtn {
+				  float: left;
+				  width: 50%;
+				}
+
+				.cont {
+				  padding: 16px;
+				}
+
+				.modal {
+				  display: none; 
+				  position: fixed; 
+				  z-index: 1; 
+				  left: 0;
+				  top: 0;
+				  width: 100%; 
+				  height: 100%; 
+				  overflow: auto; 
+				  background-color: #474e5d;
+				  padding-top: 50px;
+				}
+
+				.modal-content {
+				  background-color: #fefefe;
+				  margin: 5% auto; 
+				  border: 1px solid #888;
+				  width: 80%;
+				}
+
+				
+				hr {
+				  border: 1px solid #f1f1f1;
+				  margin-bottom: 25px;
+				}
+				 
+				.close {
+				  position: absolute;
+				  right: 35px;
+				  top: 15px;
+				  font-size: 40px;
+				  font-weight: bold;
+				  color: #f1f1f1;
+				}
+
+				.close:hover,
+				.close:focus {
+				  color: #f44336;
+				  cursor: pointer;
+				}
+
+				
+				.clearfix::after {
+				  content: "";
+				  clear: both;
+				  display: table;
+				}
+
+				
+				@media screen and (max-width: 300px) {
+				  .cancelbtn, .signupbtn {
+				     width: 100%;
+				  }
+				}
+		</style>
+
+		<meta charset="UTF-8">
+ 		<meta name="description" content="Environmental Awareness">
+  		<meta name="keywords" content="Nature, Pollution, Carbon Footprint, Environmental Awareness, Davao Region">
+  		<meta name="author" content="Absin, Baliling, Maug, Gedaro">
+  		<meta http-equiv="refresh" content="120"> 
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+
+	</body>
+				<ul>
+					<li> 
+						<a href="index.html"> Home </a>
+					</li>
+
+					<li> 
+						<a href="advo.html"> Our Advocacy </a>
+					</li>
+
+					<li> 
+						<a href="contact.html"> Contact Us! </a>
+					</li>	
+
+				</ul>
+				<br><br>
+				<table width="100%" cellpadding="0px" cellspacing="0">
+					<tr>
+						<td colspan="3">
+							<div class="header">
+								<img src="img/4.jpg" width="100%" alt="Lita Fotios">
+								<div class="headertxt">
+									<font face="Hero">Naturae</font>
+								</div>
+								<div class="headersubtxt">
+									<font face="Hero Light">Greens are grey, once tall is now stump, time to open our eyes!</font>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h1 align="center"><font face="Hero" color="#173e43"> What is Environmental Awareness? </font></h1>
+								<div class="intro">
+								<h2 style="line-height:55px;"><p align="justify"><font face="Hero Light" color="#173e43"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; According to Panchama.org, Environmental awareness is to understand the fragility of our environment and the importance of its protection. Promoting environmental awareness is an easy way to become an environmental steward and participate in creating a brighter future for our children. This is very important in our community since we are a developing city. We need to keep in mind that with the technological advancements, nature will not degrade. </font></p></h2>
+								</div>
+						</td>
+					</tr>
+					<tr bgcolor="#ccffcc">
+						<td>
+							<h1 align="center"><font face="Hero" color="#173e43"><b> The Activities </b></font></h1>
+							<div class="intro">
+								<h2 style="line-height:55px;"><p align="justify"><font face="Hero Light" color="#173e43"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As persons of the society of different ages and proffesion there are many things we can do to contribute to environmental awareness. We, in Naturae, give you ideas or ways to contribute positively to Environmental Awareness. </font></p></h2>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="intro">
+								<h1 align="center"><font face="Hero" color="#173e43"><b> Artworks </b></font></h1>
+								<h2 style="line-height:55px;"><p align="justify"><font face="Hero Light" color="#173e43"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As a student, one of the ways we can contribute to environmental awareness is by using our talents. Students these days are highly exposed to multimedia projects. </font></p></h2>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<br><br><br>
+						</td>	
+					</tr>
+				</table>
+
+				<table style="padding: 20px">
+
+					<tr bgcolor="#ccffcc">
+						<td width="20%" height="561px">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art3.jpg" width="100%" height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art6.jpg" width="100%"  height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art7.jpg" width="100%" height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art18.jpg" width="100%" height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art14.jpg" width="100%"  height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+					</tr>
+
+					<tr bgcolor="#ccffcc">
+						<td width="20%" height="200px">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art4.jpg" width="100%" height="250px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art5.jpg" width="100%"  height="250px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art8.jpg" width="100%" height="250px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%" height="200px">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art13.jpg" width="100%" height="250px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Jim Wenworth </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art15.jpg" width="100%" height="250px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+					</tr>
+
+					<tr bgcolor="#ccffcc">
+						<td width="20%" height="561px" colspan="3">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art11.jpg" width="100%" height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%" colspan="2">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art10.jpg" width="100%"  height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+					</tr>
+					<tr bgcolor="#ccffcc">
+						<td width="20%" height="561px" colspan="2">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art12.jpg" width="100%" height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+						<td width="20%" colspan="3">
+							<center>
+								<div class="container">
+									<div class="image">
+										<img src="img/art16.jpg" width="100%"  height="561px" style="padding:0px;">
+									</div>
+									<div class="middle">
+										<div class="text"> 
+    										<h2><font face="Hero" color="white"><b> Inform </b></font></h2>
+										</div>
+									</div>
+								</div>
+							</center>
+						</td>
+					</tr>
+				</table>
+
+				<table width="100%" style="padding: 20px">
+					<tr width="100%">
+						<td width="100%">
+							<h1 align="center"><font face="Hero" color="#173e43"> Video </font></h1>
+							<div class="intro">
+								<h2 style="line-height:55px;"><p align="justify"><font face="Hero Light" color="#173e43"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We can also create audio-visual presentations that talks about environmental awareness or anything related to the current state of the environenment. Here is one example provided by National Geographic </font></p></h2>
+							</div>
+						</td>
+					</tr>
+					<tr width="100%">
+						<td width="100%">
+							<center>
+							<video width="100%" height="auto" controls="">
+			  						<source src="vid/1.mp4" type="video/mp4">
+			  				<center>
+						</td>
+					</tr>
+				</table>
+
+				<table width="100%" cellspacing="0">
+					<tr bgcolor="#ccffcc">
+						<td width="33.33%" colspan="3">
+							<center>
+							<h1><font face="Hero" color="#173e43">The Authorities </font></h1>
+							<div class="intro">
+								<h2 style="line-height:55px;"><p align="justify"><font face="Hero Light" color="#173e43"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The best way to be updated regarding our environment is by keeping up with the local and national authorities from where we are from. Here are some websites that can give us the information we need. </font></p></h2>
+							</div>
+							</center>
+						</td>		
+					</tr>
+
+					<tr bgcolor="#ccffcc">
+						<td width="33.33%">
+							<center>
+								<a href="https://tagumcity.gov.ph/">
+									<div class="logo">
+										<img src="img/logo1.png" style="width:50%"></a>
+									</div>
+									<br><br>
+								<h3><font face="Hero"> Tagum City </font></h3>
+							</center>
+						</td>
+						<td width="33.33%">
+							<center>
+								<a href="http://www.davaodelnorte.gov.ph/">
+									<div class="logo">
+										<img src="img/logo2.png" style="width:50%"></a>
+									</div>
+									<br><br>
+								<h3><font face="Hero"> Davao del Norte</font></h3>
+							</center>
+						</td>
+						<td width="33.33%">
+							<center>
+								<a href="https://www.denr.gov.ph/">
+									<div class="logo">
+										<img src="img/logo3.png" style="width:50%"></a>
+									</div>
+								<h3><font face="Hero"> Department of Environment and Natural Resources  </font></h3>
+							</center>
+					</tr>
+					<tr>
+						<td width="66.67%" colspan="3" >
+							<div class="newsletter">
+								<img src="img/3.jpg" style="width:100%" alt="by: Daria Shevtsova">
+								<div class="newslettertxt"><font face="Hero">
+									Subscribe to our weekly newsletter to be updated!
+									</font>
+									<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><font face="Hero">Subscribe</font></button>
+										<div id="id01" class="modal">
+										  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+										  <form class="modal-content" action="/action_page.php">
+										  <div class="cont">
+										    <h3><font face="Hero">Subscribe to our Newsletter</h3>
+										    <p><h5>Receive weekly updates regarding the environmental activities and state of the community you are living in!</p></font></h5>
+										  </div>
+
+										  <div class="cont" style="background-color:white">
+										    <input type="text" placeholder="Name" name="name" required>
+										    <input type="text" placeholder="Email address" name="mail" required>
+										    <label>
+										      <input type="checkbox" checked="checked" name="subscribe"><font face="Hero" size="5px">Daily Newsletter </font>
+										    </label>
+										  </div>
+										      
+										 <div class="clearfix">
+										        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+										        <button type="submit" class="signupbtn">Subscribe</button>
+										      </div>
+										    </div>
+										  </form>
+										</div>
+																		</div>
+							</div>
+						</td>
+					</tr>
+
+				<table width="100%">
+					<tr>
+						<td colspan="3">
+							<center>
+							<font face="Hero Light" color="black"><h6> All Rights Reserved 2019 </h6></font>
+							</center>
+						</td>
+					</tr>
+				</table>	
+
+			<script>
+				var modal = document.getElementById('id01');
+				window.onclick = function(event) {
+				  if (event.target == modal) {
+				    modal.style.display = "none";
+				  }
+				}
+			</script>
+	</body>
+</html>
